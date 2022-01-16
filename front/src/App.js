@@ -10,9 +10,7 @@ function App() {
   useEffect(() => {
     const clickedOnSearch = async () => {
       try {
-        const data = await axios.get(
-          `http://localhost:3001/weather?address=${clickSearch}`
-        );
+        const data = await axios.get(`/weather?address=${clickSearch}`);
         setResult(data.data);
       } catch (err) {
         throw Error(err);
